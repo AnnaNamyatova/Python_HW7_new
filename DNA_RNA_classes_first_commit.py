@@ -11,7 +11,7 @@ class Dna(str):
     def gc(self):
         self = self.upper()
         gc_percent = round(((self.count('G') + self.count('C'))*100)/len(self), 1)
-        gc_percent_str = str(gc_content) + '%'
+        gc_percent_str = str(gc_percent) + '%'
         return gc_percent_str
     
     def reverse_complement(self):
@@ -36,7 +36,7 @@ class Rna(str):
     def gc(self):
         self = self.upper()
         gc_percent = round((self.count('G') + self.count('C'))*100/len(self), 1)
-        gc_percent_str = str(gc_content) + '%'
+        gc_percent_str = str(gc_percent) + '%'
         return gc_percent_str
     
     def reverse_complement(self):
