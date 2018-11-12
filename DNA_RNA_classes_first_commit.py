@@ -4,9 +4,9 @@ class Dna(str):
     def __init__(self, dna_seq):  
         self.dna_seq = dna_seq
         codes = 'AaCcGgTtRrWwSsYyKkVvHhDdBbNn'
-        for i in self:            
+        for i in dna_seq:            
             if i not in codes:
-                raise Exception('String is a DNA sequence')
+                raise Exception('String is not a DNA sequence')
             
     def gc(self):
         self = self.upper()
@@ -16,11 +16,12 @@ class Dna(str):
     
     def reverse_complement(self):
         self = self.upper()
-        return self.translate(self.maketrans('ACGT', 'TGCA'))
+        compl_sequence = self.translate(self.maketrans('ACGTRWSYKMVHDBN', 'TGCAYWSRMKBDHVN'))
+        return compl_sequence[::-1]
     
     def transcribe(self):
         self = self.upper()
-        return self.translate(self.maketrans('ACGT', 'UCGA'))
+        return self.translate(self.maketrans('ACGTRWSYKMVHDBN', 'UGCAYWSRMKBDHVN'))
     
 class Rna(str):
 
@@ -40,5 +41,5 @@ class Rna(str):
     
     def reverse_complement(self):
         self = self.upper()
-        compl_sequence = self.translate(self.maketrans('AUGC', 'UACG'))
-        return compl_sequence
+        compl_sequence = self.translate(self.maketrans('ACGURWSYKMVHDBN', 'UGCAYWSRMKBDHVN'))
+        return compl_sequence[::-1]
