@@ -11,7 +11,7 @@ class Dna(str):  #The uploaded DNA should run from 3' to 5' end
     def gc(self):
         self = self.dna.seq
         gc_percent = round(((self.count('G') + self.count('C') + self.count('S')*100)/len(self), 1)
-        gc_percent_str = str(gc_percent) + '%'
+        gc_percent_str = str(gc_percent_str) + '%'
         return gc_percent_str
     
     def reverse_complement(self):
