@@ -1,4 +1,4 @@
-class Dna(str):
+class Dna(str):  #The uploaded DNA should run from 3' to 5' end
     
     
     def __init__(self, dna_seq):  
